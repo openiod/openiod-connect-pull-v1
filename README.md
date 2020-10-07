@@ -55,6 +55,7 @@ Options:
 *  -s, --service [type]      Name of the configfile
 *  -p, --processpath [type]  Path to processor and controller
 *  -h, --help                display help for command
+
 e.g.:
 * node index -h  (get help info)
 * node index -c '{configdir}' -s '{servicename}' -p 'openiod-connect-pull-v1-{processname}'

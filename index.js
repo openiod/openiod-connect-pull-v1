@@ -163,6 +163,6 @@ logger.info("OpenIoD execute: " + ' service '+ _service.serviceName)
 if (_service.source!=undefined) logger.info("- source  : " + _service.source.name + ', procedure: ' + _service.procedure.name)
 if (_service.target!=undefined) logger.info("- target  : " + _service.target.name);
 
-executeService();
-
-return;
+exports.init = function () {
+  executeService();
+};

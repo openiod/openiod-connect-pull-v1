@@ -23,6 +23,7 @@ If not, see <https://www.gnu.org/licenses/>.
 "use strict";
 // **********************************************************************************
 // add module specific requires
+const path 	= require('path')
 var   axios = require('axios');
 
 var _openIoDConfig;

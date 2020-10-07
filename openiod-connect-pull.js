@@ -64,11 +64,11 @@ module.exports = {
 
 		if (_source.processor) {
 
-			_source.sourceProcessor 	= require(_processPath+'/processor/'+_source.processor);
+			_source.sourceProcessor 	= require(path.normalize(_processPath+'/processor/'+_source.processor));
 			logger.info(_source.sourceProcessor)
 		}
 		if (_source.controller) {
-			_source.sourceController 	= require(_processPath+'/controller/'+_source.controller);
+			_source.sourceController 	= require(path.normalize(_processPath+'/controller/'+_source.controller));
 		}
 		_sourceCopyTarget		= service.sourceCopyTarget;
 		_target							= service.target;

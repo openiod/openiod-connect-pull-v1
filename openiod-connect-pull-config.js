@@ -105,7 +105,7 @@
 				argv											= runtime_argv;
 
 				systemConfigLocalPath 		= systemFolderParent + '/../' + program.config
-				systemConfigStr 					= fs.readFileSync(systemConfigLocalPath+"/"+program.service+".json");
+				systemConfigStr 					= fs.readFileSync(path.normalize(systemConfigLocalPath+"/"+program.service+".json"));
 				systemConfig 							= JSON.parse(systemConfigStr);
 
 				systemProcessLocalPath 		= systemFolderParent + '/../' + program.processpath

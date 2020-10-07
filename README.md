@@ -9,7 +9,7 @@ documentation.
 Nodejs
 ## Application
 This module executes a process as a stand-alone service. Depending on the configuration
-it will run once or run in a continues mode.
+it will run once or in a continues mode.
 
 The structure of the application directory tree looks like this:
 

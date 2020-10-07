@@ -13,7 +13,7 @@
   },
   "service": {
     "default": {
-      "name": "{{servicename}}"
+      "name": "{{servicename}}",
       "procedure": {
         "name": "default pull",
         "module": "openiod-connect-pull",

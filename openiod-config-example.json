@@ -1,0 +1,135 @@
+{
+  "system": {
+    "systemName": "openiod-connect-pull",
+    "systemCode": "SCAPE604",
+    "systemListenPort": "5000",
+    "serviceType": "openiod-connect-pull",
+    "versionStr": "",
+    "version": {
+      "l1": 1,
+      "l2": 0,
+      "l3": 0
+    }
+  },
+  "service": {
+    "default": {
+      "name": "{{servicename}}"
+      "procedure": {
+        "name": "default pull",
+        "module": "openiod-connect-pull",
+        "repeat": {
+          "wait":60000
+        }
+      },
+      "source": {
+        "name": "{{sourcename}}",
+        "controller":"openiod-controller-{{sourcename}}",
+        "method": "GET",
+        "protocol": "https",
+        "host": "{{hostname}}",
+        "port": "{{portnumber}}",
+        "prefixPath": "{{urlprefix}}",
+        "path": "{{urlpath}}",
+        "suffixPath": "",
+        "token": "{{token}}",
+        "info": "{{infoUrl}}",
+        "idMap": {
+          "id": "id",
+          "entityTime": "{{timeAttribute}}"
+        },
+        "attributeMap": [
+          {
+            "targetType": "{{Fiware model}}",
+            "targetIdPrefix": "{{idPrefix}}",
+            "attributes": {
+              "{{sourceAttributeName1}}": "{{targetAttributeName1}}",
+              "{{sourceAttributeName2}}": "{{targetAttributeName2}}",
+              "{{sourceAttributeName3}}": "{{targetAttributeName3}}"
+            }
+          },
+          {
+            "targetType": "{{Fiware model}}",
+            "targetIdPrefix": "{{idPrefix}}",
+            "attributes": {
+              "{{sourceAttributeName1}}": "{{targetAttributeName1}}",
+              "{{sourceAttributeName2}}": "{{targetAttributeName2}}",
+              "{{sourceAttributeName3}}": "{{targetAttributeName3}}"
+            }
+          }
+        ]
+      },
+      "target": {
+        "name": "{{targetname}}",
+        "active": true,
+        "method": "POST",
+        "protocol": "https",
+        "host": "{{targethost}}",
+        "port": "{{targetport}}",
+        "prefixPath": "{{urlprefixpath}}",
+        "path":"",
+        "FiwareService": "{{Fiware-Service}}",
+        "FiwareServicePath": "{{Fiware-ServicePath}}",
+        "id": [
+          "targetIdPrefix",
+          "id",
+          "_",
+          "entityTime"
+        ],
+        "entityTimeConfig":{"round":"UP","trunc":"minute"},
+        "type": "targetType"
+      },
+      "sourceCopyTarget": {
+        "name": "contextBroker",
+        "active": false,
+        "method": "POST",
+        "protocol": "https",
+        "host": "{{contextBrokerHost}}",
+        "port": "{{contextBrokerPort}}",
+        "prefixPath": "/v2/entities?options=keyValues",
+        "path":"",
+        "FiwareService": "{{Fiware-Service}}",
+        "FiwareServicePath": "{{Fiware-ServicePath}}"
+      },
+      "errorTarget": {
+        "name": "contextBroker",
+        "active": false,
+        "protocol": "https",
+        "host": "{{contextBrokerHost}}",
+        "port": "{{contextBrokerPort}}",
+        "prefixPath": "/",
+        "FiwareService": "{{Fiware-Service}}",
+        "FiwareServicePath": "{{Fiware-ServicePath}}",
+        "id": [
+          "targetIdPrefix",
+          "id",
+          "_",
+          "entityTime"
+        ],
+        "type": "targetType"
+      },
+      "log": {
+        "file": {
+          "level": "info",
+          "filename": "../log/openiod-connect-pull-{{servicename}}.log",
+          "handleExceptions": true,
+          "json": false,
+          "maxsize": 5242880,
+          "maxFiles": 5,
+          "colorize": false
+        },
+        "console": {
+          "level": "debug",
+          "handleExceptions": true,
+          "json": false,
+          "colorize": true
+        }
+      }
+    }
+  },
+  "parameter": {
+
+  },
+  "modules": [
+
+  ]
+}

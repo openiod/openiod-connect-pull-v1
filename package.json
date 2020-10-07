@@ -1,0 +1,21 @@
+{
+  "name": "openiod-connect-pull",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "axios": "^0.20.0",
+    "commander": "^6.1.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+  },
+  "author": "André van der Wiel <awiel@scapeler.com> (https://www.scapeler.com/)",
+  "license": "CC-BY-SA 4.0 "
+}

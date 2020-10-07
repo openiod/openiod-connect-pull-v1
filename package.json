@@ -14,8 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-  },
+  "repository": {},
   "author": "André van der Wiel <awiel@scapeler.com> (https://www.scapeler.com/)",
   "license": "CC-BY-SA 4.0 "
 }

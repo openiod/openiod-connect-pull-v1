@@ -20,6 +20,8 @@ If not, see <https://www.gnu.org/licenses/>.
 
 "use strict";
 
+const path 	= require('path')
+
 var main_module = 'openiod-connect-pull'
 var modulePath = __dirname
 var openIoDConfig = require(path.normalize(modulePath + '/openiod-connect-pull-config'))

@@ -3,7 +3,7 @@
 # Install
 
 ## Dependencies
-npm and nodejs
+Nodejs
 ## Application
 mkdir <applicationname>/<processname>
 cd <applicationname>/<processname>

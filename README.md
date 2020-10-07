@@ -1,4 +1,8 @@
-# openiod-connect-pull
+# openiod-connect-pull-v1
+
+This generic module is used by 'processor' modules. The instructions as
+described in the processor modules can overrule (parts of) the following
+documentation.
 
 # Install
 ## Dependencies
